@@ -1,11 +1,15 @@
 const TodoItem = ({id, done, title, onToggleTodo, onDeleteTodo}) => {
 	return (
 		<div>
-			<div key={id} className="TodoItem">
+			<form className="TodoItem">
 				<input checked={done} onChange={() => onToggleTodo(id)} type="checkbox" />
-				<p>{title}</p>
-				<button onClick={() => onDeleteTodo(id)}>Löschen</button>
-			</div>
+				<ul>
+					<li>{title}</li>
+				</ul>
+				<button type="button" onClick={() => onDeleteTodo(id)}>
+					Löschen
+				</button>
+			</form>
 		</div>
 	);
 };

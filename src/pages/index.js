@@ -42,54 +42,50 @@ export default function Home() {
 
 	// Suche von Todos
 	return (
-		<div className="main">
-			<div>
+		<>
+			<form>
 				<input
 					onChange={event => setSearchQuery(event.target.value)}
 					type="text"
 					placeholder="search"
-				></input>
-			</div>
+				/>
+			</form>
+
+			<h1>Smart Organize App</h1>
 
 			<div>
-				<h1>Smart Organize App</h1>
+				<input
+					onKeyDown={handleAddtodo}
+					type="text"
+					placeholder="Hier Termine Hinzufügen"
+				/>
 			</div>
 
-			<div>
-				<div>
-					<input
-						onKeyDown={handleAddtodo}
-						type="text"
-						placeholder="Hier Termine Hinzufügen"
-					></input>
-				</div>
-
-				{searchQuery ? (
+			{searchQuery ? (
+				<TodoList
+					title="Suchergebnisse"
+					list={filterTodos}
+					onDeleteTodo={handleDeleteTodo}
+				/>
+			) : (
+				<>
 					<TodoList
-						title="Suchergebnisse"
-						list={filterTodos}
+						title="Zu erledigen"
+						list={activeTodos}
 						onDeleteTodo={handleDeleteTodo}
+						onToggleTodo={toggleTodo}
 					/>
-				) : (
-					<>
-						<TodoList
-							title="Zu erledigen"
-							list={activeTodos}
-							onDeleteTodo={handleDeleteTodo}
-							onToggleTodo={toggleTodo}
-						/>
-						<TodoList
-							title="Erledigt"
-							list={doneTodos}
-							onDeleteTodo={handleDeleteTodo}
-							onToggleTodo={toggleTodo}
-						/>
-					</>
-				)}
-				<div>
-					<Counter />
-				</div>
+					<TodoList
+						title="Erledigt"
+						list={doneTodos}
+						onDeleteTodo={handleDeleteTodo}
+						onToggleTodo={toggleTodo}
+					/>
+				</>
+			)}
+			<div>
+				<Counter />
 			</div>
-		</div>
+		</>
 	);
 }
