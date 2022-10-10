@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {v4 as uuid} from 'uuid';
 
+import Calendar from '../components/Calendar';
 import Counter from '../components/Counter';
 import TodoList from '../components/toList.js';
 import useStore from '../components/useStore';
@@ -43,6 +44,7 @@ export default function Home() {
 	// Suche von Todos
 	return (
 		<>
+			<Calendar></Calendar>
 			<form>
 				<input
 					onChange={event => setSearchQuery(event.target.value)}
@@ -83,6 +85,7 @@ export default function Home() {
 					/>
 				</>
 			)}
+
 			<div>
 				<Counter />
 			</div>

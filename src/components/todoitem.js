@@ -1,3 +1,5 @@
+import {Buttons} from '../components/Buttons.styled';
+
 const TodoItem = ({id, done, title, onToggleTodo, onDeleteTodo}) => {
 	return (
 		<div>
@@ -6,9 +8,9 @@ const TodoItem = ({id, done, title, onToggleTodo, onDeleteTodo}) => {
 				<ul>
 					<li>{title}</li>
 				</ul>
-				<button type="button" onClick={() => onDeleteTodo(id)}>
+				<Buttons type="button" onClick={() => onDeleteTodo(id)}>
 					Löschen
-				</button>
+				</Buttons>
 			</form>
 		</div>
 	);
