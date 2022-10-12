@@ -3,9 +3,9 @@ import {v4 as uuid} from 'uuid';
 
 import Calendar from '../components/Calendar';
 import Counter from '../components/Counter';
+import {Div_Headline1, Headline1} from '../components/styled.components/headline1.styled';
 import TodoList from '../components/toList.js';
 import useStore from '../components/useStore';
-
 export default function Home() {
 	const todos = useStore(state => state.todos);
 	const setTodos = useStore(state => state.setTodos);
@@ -44,6 +44,9 @@ export default function Home() {
 	// Suche von Todos
 	return (
 		<>
+			<Div_Headline1>
+				<Headline1>Smart Organize App</Headline1>
+			</Div_Headline1>
 			<Calendar></Calendar>
 			<form>
 				<input
@@ -52,8 +55,6 @@ export default function Home() {
 					placeholder="search"
 				/>
 			</form>
-
-			<h1>Smart Organize App</h1>
 
 			<div>
 				<input

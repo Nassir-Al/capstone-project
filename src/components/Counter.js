@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-import {Buttons} from './Buttons.styled';
+import {Buttons} from './styled.components/Buttons.styled';
 
 export default function Example() {
 	const [count, setCount] = useState(0);

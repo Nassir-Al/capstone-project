@@ -2,7 +2,7 @@ import moment from 'moment';
 import {useState} from 'react';
 import Calendar from 'react-calendar';
 
-import {CalenderContainer} from './Calender.styled';
+import {CalenderContainer} from '../components/styled.components/Calender.styled';
 
 export default function App() {
 	const [dateState, setDateState] = useState(new Date());
