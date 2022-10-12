@@ -12,7 +12,7 @@ export default function App() {
 	return (
 		<CalenderContainer>
 			<Calendar value={dateState} onChange={changeDate} />
-			Current selected date is <b>{moment(dateState).format('MMMM Do YYYY')}</b>
+			Current selected date is <b>{moment(dateState).format('DD.MM.YYYY')}</b>
 		</CalenderContainer>
 	);
 }
