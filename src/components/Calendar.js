@@ -1,6 +1,7 @@
 import moment from 'moment';
 import {useState} from 'react';
 import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 import {CalenderContainer} from '../components/styled.components/Calender.styled';
 
