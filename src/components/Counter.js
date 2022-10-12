@@ -1,6 +1,5 @@
 import {useState} from 'react';
 
-
 import {Buttons} from './styled.components/Buttons.styled';
 
 export default function Example() {

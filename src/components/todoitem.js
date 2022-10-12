@@ -1,6 +1,4 @@
-
 import {Buttons} from '../components/styled.components/Buttons.styled';
-
 
 const TodoItem = ({id, done, title, onToggleTodo, onDeleteTodo}) => {
 	return (

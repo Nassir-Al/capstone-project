@@ -44,9 +44,7 @@ export default function Home() {
 	// Suche von Todos
 	return (
 		<>
-
 			<Headline>Smart Organizer</Headline>
-
 
 			<Calendar></Calendar>
 			<form>
