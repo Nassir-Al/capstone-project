@@ -1,17 +1,17 @@
-import {Buttons} from '../components/styled.components/Buttons.styled';
+import {Buttons, Todo, Check} from './styled.components/Buttons.styled';
 
 const TodoItem = ({id, done, title, onToggleTodo, onDeleteTodo}) => {
 	return (
 		<div>
-			<form className="TodoItem">
+			<Todo>
 				<input checked={done} onChange={() => onToggleTodo(id)} type="checkbox" />
-				<ul>
-					<li>{title}</li>
-				</ul>
+				<Check>
+					<p>{title}</p>
+				</Check>
 				<Buttons type="button" onClick={() => onDeleteTodo(id)}>
-					Löschen
+					Delete
 				</Buttons>
-			</form>
+			</Todo>
 		</div>
 	);
 };

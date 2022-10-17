@@ -1,8 +1,8 @@
+import {Card} from './styled.components/Buttons.styled';
 import TodoItem from './todoitem';
-
 const TodoList = ({list, title, onDeleteTodo, onToggleTodo}) => {
 	return (
-		<div className="TodoListContainer">
+		<Card>
 			<h2>{title}</h2>
 
 			{list.map(todo => (
@@ -15,7 +15,7 @@ const TodoList = ({list, title, onDeleteTodo, onToggleTodo}) => {
 					onToggleTodo={onToggleTodo}
 				/>
 			))}
-		</div>
+		</Card>
 	);
 };
 export default TodoList;
