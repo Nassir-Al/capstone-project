@@ -1,4 +1,4 @@
-import {Card} from './styled.components/Buttons.styled';
+import {Card} from './styled.components/Card.styled';
 import TodoItem from './todoitem';
 const TodoList = ({list, title, onDeleteTodo, onToggleTodo}) => {
 	return (

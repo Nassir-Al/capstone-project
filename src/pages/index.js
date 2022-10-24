@@ -2,9 +2,9 @@ import {useState} from 'react';
 import {v4 as uuid} from 'uuid';
 
 import Calendar from '../components/Calendar';
-import {Background} from '../components/styled.components/Buttons.styled';
+import {Background} from '../components/styled.components/background.styled';
 import {Headline} from '../components/styled.components/headline1.styled';
-import {Input, Input_done} from '../components/styled.components/Input.styled';
+import {Input} from '../components/styled.components/Input.styled';
 import TodoList from '../components/toList.js';
 import useStore from '../components/useStore';
 export default function Home() {
@@ -54,9 +54,9 @@ export default function Home() {
 				/>
 			</form>
 
-			<div>
-				<Input_done onKeyDown={handleAddtodo} type="text" placeholder="Hinzufügen" />
-			</div>
+			<form>
+				<Input onKeyDown={handleAddtodo} type="text" placeholder="Hinzufügen" />
+			</form>
 
 			{searchQuery ? (
 				<TodoList
