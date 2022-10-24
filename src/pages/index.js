@@ -2,8 +2,9 @@ import {useState} from 'react';
 import {v4 as uuid} from 'uuid';
 
 import Calendar from '../components/Calendar';
-import Counter from '../components/Counter';
+import {Background} from '../components/styled.components/Buttons.styled';
 import {Headline} from '../components/styled.components/headline1.styled';
+import {Input, Input_done} from '../components/styled.components/Input.styled';
 import TodoList from '../components/toList.js';
 import useStore from '../components/useStore';
 export default function Home() {
@@ -23,7 +24,6 @@ export default function Home() {
 		}
 	};
 
-	// Abhacken von Todos
 	const toggleTodo = id => {
 		setTodos(
 			todos.map(todo => {
@@ -41,26 +41,21 @@ export default function Home() {
 		todo.title.toLowerCase().includes(searchQuery.toLowerCase())
 	);
 
-	// Suche von Todos
 	return (
-		<>
-			<Headline>Smart Organizer</Headline>
+		<Background>
+			<Headline>smart organizer</Headline>
 
 			<Calendar></Calendar>
 			<form>
-				<input
+				<Input
 					onChange={event => setSearchQuery(event.target.value)}
 					type="text"
-					placeholder="search"
+					placeholder="Suche..."
 				/>
 			</form>
 
 			<div>
-				<input
-					onKeyDown={handleAddtodo}
-					type="text"
-					placeholder="Hier Termine Hinzufügen"
-				/>
+				<Input_done onKeyDown={handleAddtodo} type="text" placeholder="Hinzufügen" />
 			</div>
 
 			{searchQuery ? (
@@ -72,23 +67,19 @@ export default function Home() {
 			) : (
 				<>
 					<TodoList
-						title="Zu erledigen"
+						title="zu erledigen"
 						list={activeTodos}
 						onDeleteTodo={handleDeleteTodo}
 						onToggleTodo={toggleTodo}
 					/>
 					<TodoList
-						title="Erledigt"
+						title="erledigt"
 						list={doneTodos}
 						onDeleteTodo={handleDeleteTodo}
 						onToggleTodo={toggleTodo}
 					/>
 				</>
 			)}
-
-			<div>
-				<Counter />
-			</div>
-		</>
+		</Background>
 	);
 }
